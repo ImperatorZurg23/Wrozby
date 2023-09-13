@@ -1,26 +1,33 @@
 $(document).ready(function(){
-  
+  const sentence ='Spotkasz piękną blondynkę wieczorową porą.'
+  var letters = sentence.split('')
+
+  const divRandom = document.getElementById('random')
+  for(let i = 0; i<letters.length; i++){
+    const letter = document.createElement('span')
+    letter.setAttribute('data-change', Math.round(Math.random()*100) )
+    letter.innerHTML = '0'
+    letter.classList.add('nbr')
+    letter.classList.add('ltr')
+
+    divRandom.appendChild(letter)
+
+  }
   var $randomnbr = $('.nbr');
   var $timer= 10;
   var $it;
   var $data = 0;
   var index;
-  var change;
-  var letters = ["c", "o", "d", "e", "p", "e", "n", ".", "i", "o"];
-  
-  $randomnbr.each(function(){
-      
-    change = Math.round(Math.random()*100);
-    $(this).attr('data-change', change);
-    
-  });
-  
+
+
+  console.log(letters)
+
   function random(){
     return Math.round(Math.random()*9);
   };
   
   function select(){
-    return Math.round(Math.random()*$randomnbr.length+1);
+    return Math.round(Math.random()*letters.length+1);
   };
   
   function value(){
@@ -39,5 +46,6 @@ $(document).ready(function(){
   };
   
   $it = setInterval(value, $timer);
+
     
 });
