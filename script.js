@@ -1,26 +1,26 @@
 $(document).ready(function(){
-  const sentence ='Spotkasz piękną blondynkę wieczorową porą.'
+
+  const sentence ='Spotkasz piękną blondynkę wieczorową porą'
   var letters = sentence.split('')
 
   const divRandom = document.getElementById('random')
   for(let i = 0; i<letters.length; i++){
     const letter = document.createElement('span')
-    letter.setAttribute('data-change', Math.round(Math.random()*100) )
+    letter.setAttribute('data-change', Math.round(Math.random()*500) )
     letter.innerHTML = '0'
     letter.classList.add('nbr')
+
     letter.classList.add('ltr')
 
     divRandom.appendChild(letter)
-
   }
+  var $data = 0;
+
   var $randomnbr = $('.nbr');
   var $timer= 10;
   var $it;
-  var $data = 0;
   var index;
 
-
-  console.log(letters)
 
   function random(){
     return Math.round(Math.random()*9);
