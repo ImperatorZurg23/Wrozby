@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  const sentence ='Spotkasz piękną blondynkę wieczorową porą'
+  const sentence ='Spotkasz piękną szatynkę wieczorową porą'
   var letters = sentence.split('')
 
   const divRandom = document.getElementById('random')
