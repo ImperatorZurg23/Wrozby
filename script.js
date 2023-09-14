@@ -9,18 +9,16 @@ $(document).ready(function(){
     letter.setAttribute('data-change', Math.round(Math.random()*500) )
     letter.innerHTML = '0'
     letter.classList.add('nbr')
-
     letter.classList.add('ltr')
-
+    letter.setAttribute("id", "span")
     divRandom.appendChild(letter)
   }
-  var $data = 0;
 
+  var $data = 0;
   var $randomnbr = $('.nbr');
   var $timer= 10;
   var $it;
   var index;
-
 
   function random(){
     return Math.round(Math.random()*9);
@@ -44,8 +42,23 @@ $(document).ready(function(){
     });
     
   };
-  
   $it = setInterval(value, $timer);
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 
-    
+  }
+  sleep(6000).then(() => {
+
+    const span = document.querySelectorAll('#span')
+
+    for (let i = 0; i < span.length; i++) {
+      let item = span[i]
+      if (item.innerText.length === 0){
+        item.classList.add('newClass')
+        console.log(item)
+      }
+    }
+  });
+
+
 });
